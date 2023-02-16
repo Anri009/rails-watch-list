@@ -1,0 +1,18 @@
+<div class="container mt-5">
+
+<h1> SAVE ANY KIND OF MOVIE </h1>
+
+
+<h2>My Lists</h2>
+
+<% @lists.each do |list| %>
+    <%# <ul><%= list.name %></ul>
+    <%= link_to list.name, list_path(list) %>
+<% end %>
+
+<%# <a class="btn btn-ghost" >Create list</a> %>
+
+<%= link_to "create list", new_list_path, class: "btn btn-ghost" %>
+
+
+</div>
