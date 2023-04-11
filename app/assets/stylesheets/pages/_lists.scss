@@ -1,3 +1,7 @@
+.container{
+  background-color: black;
+}
+
 .banner {
   background-size: cover;
   background-position: center;
@@ -8,7 +12,7 @@
   margin: 0;
   color: white;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-  font-size: 50px;
+  font-size: 100px;
   font-weight: bold;
 }
 
@@ -25,9 +29,6 @@
   grid-gap: 16px;
 }
 
-.container {
-
-}
 
 .card-category {
   width: 300px;
