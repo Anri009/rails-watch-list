@@ -1,15 +1,26 @@
 <div class="container">
-  <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://i.pinimg.com/564x/80/ea/42/80ea42a55d799469a95df6c9519d39a1.jpg);">
+
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://i.pinimg.com/564x/80/ea/42/80ea42a55d799469a95df6c9519d39a1.jpg);">
     <h1 class="title">SAVE YOUR MOVIE.</h1>
+
+</div>
+
+
+<h2 class="mylist mt-3">My Lists</h2>
+
+<div class="cards">
+
+<% @lists.each do |list| %>
+  <div class="card-category mt-3 text-center" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= list.photo.attached? ? cl_image_path(list.photo.key) : 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTPQDYau3Hs4-xw1i8jVSUY4BlF4FLmg8lQqg&usqp=CAU' %>)">
+      <%= link_to list.name, list_path(list), class:"fs-2 text-decoration-none text" %>
+
   </div>
-  <h2 class="mylist mt-3">My Lists</h2>
-  <div class="cards">
-    <% @lists.each do |list| %>
-      <div class="card-category mt-3 text-center" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= list.photo.attached? ? cl_image_path(list.photo.key) : 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTPQDYau3Hs4-xw1i8jVSUY4BlF4FLmg8lQqg&usqp=CAU' %>)">
-        <%= link_to list.name, list_path(list), class:"fs-2 text-decoration-none text" %>
-      </div>
-    <% end %>
-  </div>
-  <%# <a class="btn btn-ghost" >Create list</a> %>
-  <%= link_to "create list", new_list_path, class: "btn btn-ghost" %>
+
+
+<% end %>
+</div>
+
+<%# <a class="btn btn-ghost" >Create list</a> %>
+
+<%= link_to "create list", new_list_path, class: "btn btn-ghost" %>
 </div>
